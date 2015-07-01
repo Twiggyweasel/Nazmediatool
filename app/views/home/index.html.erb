@@ -1,0 +1,34 @@
+<br>
+
+<div class='row'>
+    <% @test.each do |posts| %>
+    <div class='col-md-2'>
+        
+        <div class='well'>
+            <img src='http://blogs.oregonstate.edu/pnacac/files/2014/05/instagram-icon.jpg' height='25' width='25'>
+            <HR>
+                <h4><%= posts.user.username %></h4>
+            <img src='<%= posts.images.thumbnail.url %>' height='150' width='175'>
+            <br>
+            <div class='center'><%= truncate(posts.caption.text, :length=> 100, :separator => '...') %></div>
+    
+        </div>
+    </div>
+    <% end %>
+    <% @tweets.each do |tweet| %>
+    <div class='col-md-2'>
+        
+        <div class='well'>
+        
+        <img src='http://scienceomg.com/Images/twitter_round.png' height='25' width='25'>    
+        <h4><%= tweet.user.screen_name %></h4>
+        <!--<img src='<#%= tweet.user.profile_image_url %>', width='50' height='50' >-->
+        
+        
+        <br>
+        <%= tweet.text %>
+        </div>
+    
+    </div>
+    <% end %>
+    
